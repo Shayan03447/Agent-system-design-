@@ -1,0 +1,27 @@
+fastapi==0.110.3 # for api (chat,email, endpoints, health checks)
+uvicorn[standard]==0.30.1 # ASGI server for run api
+pydantic==2.7.4 # for data validation and settings management
+pydantic-settings==2.3.4 # configuration load from dataabse(api keys, DB urls)
+
+sqlalchemy==2.0.31 # for ORM (object-relational mapping)
+psycopg2-binary==2.9.9 # drivers for python to connect with postgres DB
+alembic==1.13.2 # for database migrations
+
+redis==5.0.7 # for rate-limiting, caching, temporary session-state
+aiokafka==0.10.0 # kafka producer and consumer for async operations
+
+langchain==0.2.11 # For llm calls, prompt pipeline, tool calling
+langgraph==0.1.17 # for agentic workflows (router, QA, planner
+pinecone==5.0.1 # for vector search and retrieval
+
+httpx==0.27.0 # for calling external tools (shopify, crm, etc)
+python-dotenv==1.0.1 # for loading env variables form .env file
+
+streamlit==1.36.0 # for dashboard (monitoring, incident response, matrics)
+
+# Arize Phoenix is optional on Windows: it pulls sqlean-py which needs MSVC C++
+# build tools to compile. Use: pip install -r requirements-observability.txt
+# (on Linux/WSL or after installing Visual Studio Build Tools).
+
+pytest==8.2.2 # unit, integration test framework
+pytest-asyncio==0.23.8 # for testing async code 

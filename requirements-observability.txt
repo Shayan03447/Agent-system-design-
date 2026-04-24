@@ -1,0 +1,11 @@
+# Optional observability stack (Arize Phoenix + LangChain instrumentation).
+#
+# Windows: install may fail on sqlean-py without a C compiler. Fix one of:
+#   1) Install "Build Tools for Visual Studio" with C++ workload, then retry.
+#   2) Use WSL2 (Ubuntu) or Docker for this layer.
+#   3) Skip this file until you need Phoenix UI; core app uses requirements.txt only.
+#
+-r requirements.txt
+
+arize-phoenix==4.24.0
+openinference-instrumentation-langchain>=0.1.26,<0.2
