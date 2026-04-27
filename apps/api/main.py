@@ -5,7 +5,7 @@ from fastapi import FastAPI
 app = FastAPI(
     title="Ecommerce Agent API",
     version="0.1.0",
-    description="Day-1 health check and future chat/email routes.",
+    description="Health check, users, and future chat/email routes.",
 )
 
 

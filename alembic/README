@@ -1,0 +1,5 @@
+Generic single-database configuration for Alembic migrations.
+
+Run from repository root (POSTGRES_URL must be set, e.g. in `.env`):
+
+  alembic upgrade head
