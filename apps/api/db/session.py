@@ -9,9 +9,9 @@ import os
 
 # ---Get the postgress url from the envirnoment variables
 load_dotenv()
-DATABASE_URL = (os.getenv("POSTGRES_URL") or "").strip()
+DATABASE_URL= (os.getenv("POSTGRESS_Url") or "").strip()
 if not DATABASE_URL:
-    raise RuntimeError("POSTGRES_URL is not set. Add it into your envirnoment/.env before starting the app")
+    raise RuntimeError("Postgress_url is not set")
 
 try:
     parsed_url: URL = make_url(DATABASE_URL)
@@ -19,13 +19,12 @@ except Exception as exc:
     raise RuntimeError(
         "POSTGRES_URL is invalid. Expected format like"
         "'postgresql+psycopg2://user:password@host:5432/dbname'"
-    ) from exc
+        )from exc
+   
 
-if not parsed_url.drivername.startswith("postgresql"):
-    raise RuntimeError(
-        f"POSTGRES_URL must use a postgreSQL driver, got '{parsed_url.drivername}'."
-    )
 
+if not parsed_url.drivername.startwith("postgresql"):
+    raise RuntimeError(f"Postgress_url must use a postgreSQL driver, got '{parsed_url.drivername}'.")
 # Keep SQL Logs disabled by default in production
 SQL_ECHO = os.getenv("SQL_ECHO", "false").strip().lower()=="true"
 
