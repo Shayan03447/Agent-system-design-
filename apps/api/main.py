@@ -12,4 +12,8 @@ app = FastAPI(
 @app.get("/health", tags=["ops"])
 def health() -> dict[str, str]:
     """Liveness probe for deploys and local checks."""
-    return {"status": "ok"}
+    return {
+        "status": "ok",
+        "service": "AI Agent API",
+        "version": "1.0",
+        }
